@@ -1,9 +1,8 @@
 const Sequelize = require("sequelize")
-const Op = Sequelize.Op
 const db = {}
-const sequelize = new Sequelize("dbcombustible", "root","", {
-    dialect: 'mysql',
-    host: 'localhost',
+const sequelize = new Sequelize("dbcombustible", "cmonte","Monte2019", {
+    dialect: 'mssql',
+    host: '192.168.200.58',
     pool: {
         max:5,
         min:0,
@@ -15,11 +14,7 @@ const sequelize = new Sequelize("dbcombustible", "root","", {
         // same as host string above
         //socketPath: '/cloudsql/alycoinappweb:us-central1:bdaly-ico'
     },
-    logging: false,
-    operatorsAliases: {
-        $gt:Op.gt,
-        $between: Op.between
-    }
+    logging: false,   
 })
 
 db.sequelize = sequelize
