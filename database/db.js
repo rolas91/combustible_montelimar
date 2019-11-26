@@ -2,7 +2,7 @@ const Sequelize = require("sequelize")
 const db = {}
 const sequelize = new Sequelize("dbcombustible", "cmonte","Monte2019", {
     dialect: 'mssql',
-    host: '192.168.200.58',
+    host: '186.1.13.11',
     pool: {
         max:5,
         min:0,
