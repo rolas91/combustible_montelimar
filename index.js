@@ -1,12 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-<<<<<<< HEAD
-const port = 3000;
-const cron = require('node-cron');
-=======
-const port =process.env.PORT || 3000;
->>>>>>> bdecaa958ab6d1a96a7a3150e72477ba275beba3
+const port = process.env.PORT || 3000;
 var bodyparse = require('body-parser');
 const transaction = require('./controller/fuel-service-transaction');
 
