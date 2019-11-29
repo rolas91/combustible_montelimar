@@ -1,21 +1,24 @@
 {
-  "name": "combustible",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon index.js"
-  },
-  "author": "Rolando Sanchez",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mssql": "^6.0.1",
-    "node-cron": "^2.0.3",
-    "node-fetch": "^2.6.0",
-    "nodemon": "^1.19.4",
-    "sequelize": "^5.21.2"
-  }
+	"name": "combustible",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "nodemon index.js"
+	},
+	"author": "Rolando Sanchez",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"mssql": "^6.0.1",
+		"node-cron": "^2.0.3",
+		"node-fetch": "^2.6.0",
+		"nodemon": "^1.19.4",
+		"sequelize": "^5.21.2"
+	},
+	"engines": {
+		"node": "12.12.0"
+	}
 }
