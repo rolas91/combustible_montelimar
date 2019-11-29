@@ -1,74 +1,74 @@
-const Sequelize = require("sequelize");
-const db = require("../database/db");
+const Sequelize = require('sequelize');
+const db = require('../database/db');
 
 module.exports = db.sequelize.define(
 	'fuel_log_apis',
 	{
-		IXID:{
+		ID: {
 			type: Sequelize.STRING
 		},
-		CID:{
+		CID: {
 			type: Sequelize.INTEGER
 		},
-		PID:{
+		PID: {
 			type: Sequelize.STRING
 		},
-		RT:{
+		RT: {
 			type: Sequelize.STRING
 		},
-		DID:{
+		DID: {
 			type: Sequelize.STRING
 		},
-		TID:{
+		TID: {
 			type: Sequelize.STRING
 		},
-		VID:{
+		VID: {
 			type: Sequelize.STRING
 		},
-		NN:{
+		NN: {
 			type: Sequelize.STRING
 		},
-		OD:{
+		OD: {
 			type: Sequelize.STRING
 		},
-		TC:{
+		TC: {
 			type: Sequelize.STRING
 		},
-		EH:{
+		EH: {
 			type: Sequelize.INTEGER
 		},
-		JID:{
+		JID: {
 			type: Sequelize.STRING
 		},
-		CS:{
+		CS: {
 			type: Sequelize.STRING
 		},
-		CE:{
+		CE: {
 			type: Sequelize.STRING
 		},
-		TN:{
+		TN: {
 			type: Sequelize.STRING
 		},
-		CT:{
+		CT: {
 			type: Sequelize.STRING
 		},
-		DS:{
+		DS: {
 			type: Sequelize.STRING
 		},
-		EHP:{
+		EHP: {
 			type: Sequelize.INTEGER
 		},
-		EHT:{
+		EHT: {
 			type: Sequelize.INTEGER
 		},
-		SID:{
+		SID: {
 			type: Sequelize.INTEGER
 		},
-		CC:{
+		CC: {
 			type: Sequelize.STRING
 		}
 	},
 	{
-		timestamps:false
+		timestamps: false
 	}
-)
+);
