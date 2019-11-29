@@ -5,7 +5,7 @@ const fuelservice = express.Router();
 const FuelApi = require("../models/fuel_log_api");
 
 
-fuelservice.get('/getdata/:id', (req , res ) => {
+fuelservice.get('/getdata/:id', (req , response, next ) => {
 	try{
 		const body = { 
 		usuario: 'jobando' ,
@@ -48,7 +48,10 @@ fuelservice.get('/getdata/:id', (req , res ) => {
 					SID: conv['RefuelRecord'][i]['SID'],
 					CC: conv['RefuelRecord'][i]['CC']
 		    	}).then(resp => {
-		    		return res.status(200).json({response:'Procesado correctamente'});
+					if(resp){
+						return response.send("Procesado con exito")
+					}
+		    	
 		    	});
 		    }
 	    	
