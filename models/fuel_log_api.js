@@ -66,6 +66,18 @@ module.exports = db.sequelize.define(
 		},
 		CC: {
 			type: Sequelize.STRING
+		},
+		PN: {
+			type: Sequelize.STRING
+		},
+		PPM: {
+			type: Sequelize.STRING
+		},
+		SN: {
+			type: Sequelize.STRING
+		},
+		FTN: {
+			type: Sequelize.STRING
 		}
 	},
 	{

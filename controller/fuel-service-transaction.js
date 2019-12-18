@@ -11,14 +11,12 @@ function transaction() {
 			limit: 1,
 			order: [['ID', 'DESC']]
 		}).then(function(data) {
-			console.log(data);
-			if (data.length != 0) {
-				console.log(data[0]['id']);
+			if (JSON.stringify(data) != '[]') {
 				const body = {
 					usuario: 'jobando',
 					contrasenya: 'obando2019',
 					company: 'Ingenio montelimar',
-					lastregisterID: data[0]['id']
+					lastregisterID: data[0]['ID']
 				};
 
 				fetch('http://fuel-service.herokuapp.com/fuel_service', {
@@ -29,36 +27,111 @@ function transaction() {
 					.then(res => res.json())
 					.then(json => {
 						if (json) {
-							var obj = JSON.stringify(json);
-							var conv = JSON.parse(obj);
-
-							for (i = 0; i < conv['RefuelRecord'].length; i++) {
+							for (i = 1; i < json.response.REFUELS.R.length; i++) {
 								FuelApi.create({
-									ID: conv['RefuelRecord'][i]['IXID'],
-									CID: conv['RefuelRecord'][i]['CID'],
-									PID: conv['RefuelRecord'][i]['PID'],
-									RT: conv['RefuelRecord'][i]['RT'],
-									DID: conv['RefuelRecord'][i]['DID'],
-									TID: conv['RefuelRecord'][i]['TID'],
-									VID: conv['RefuelRecord'][i]['VID'],
-									NN: conv['RefuelRecord'][i]['NN'],
-									OD: conv['RefuelRecord'][i]['OD'],
-									TC: conv['RefuelRecord'][i]['TC'],
-									EH: conv['RefuelRecord'][i]['EH'],
-									JID: conv['RefuelRecord'][i]['JID'],
-									CS: conv['RefuelRecord'][i]['CS'],
-									CE: conv['RefuelRecord'][i]['CE'],
-									TN: conv['RefuelRecord'][i]['TN'],
-									CT: conv['RefuelRecord'][i]['CT'],
-									DS: conv['RefuelRecord'][i]['DS'],
-									EHP: conv['RefuelRecord'][i]['EHP'],
-									EHT: conv['RefuelRecord'][i]['EHT'],
-									SID: conv['RefuelRecord'][i]['SID'],
-									CC: conv['RefuelRecord'][i]['CC']
-								}).then(resp => {
-									console.log('procesado correctamente ');
-								});
+									ID:
+										json.response.REFUELS.R[i].IXID != undefined
+											? json.response.REFUELS.R[i].IXID[0]
+											: 0,
+									CID:
+										json.response.REFUELS.R[i].CID != undefined
+											? json.response.REFUELS.R[i].CID[0]
+											: 0,
+									PID:
+										json.response.REFUELS.R[i].PID != undefined
+											? json.response.REFUELS.R[i].PID[0]
+											: 0,
+									RT:
+										json.response.REFUELS.R[i].RT != undefined
+											? json.response.REFUELS.R[i].RT[0]
+											: 0,
+									DID:
+										json.response.REFUELS.R[i].DID != undefined
+											? json.response.REFUELS.R[i].DID[0]
+											: 0,
+									TID:
+										json.response.REFUELS.R[i].TID != undefined
+											? json.response.REFUELS.R[i].TID[0]
+											: 0,
+									VID:
+										json.response.REFUELS.R[i].VID != undefined
+											? json.response.REFUELS.R[i].VID[0]
+											: 0,
+									NN:
+										json.response.REFUELS.R[i].NN != undefined
+											? json.response.REFUELS.R[i].NN[0]
+											: 0,
+									OD:
+										json.response.REFUELS.R[i].OD != undefined
+											? json.response.REFUELS.R[i].OD[0]
+											: 0,
+									TC:
+										json.response.REFUELS.R[i].TC != undefined
+											? json.response.REFUELS.R[i].TC[0]
+											: 0,
+									EH:
+										json.response.REFUELS.R[i].EH != undefined
+											? json.response.REFUELS.R[i].EH[0]
+											: 0,
+									JID:
+										json.response.REFUELS.R[i].JID != undefined
+											? json.response.REFUELS.R[i].JID[0]
+											: 0,
+									CS:
+										json.response.REFUELS.R[i].CS != undefined
+											? json.response.REFUELS.R[i].CS[0]
+											: 0,
+									CE:
+										json.response.REFUELS.R[i].CE != undefined
+											? json.response.REFUELS.R[i].CE[0]
+											: 0,
+									TN:
+										json.response.REFUELS.R[i].TN != undefined
+											? json.response.REFUELS.R[i].TN[0]
+											: 0,
+									CT:
+										json.response.REFUELS.R[i].CT != undefined
+											? json.response.REFUELS.R[i].CT[0]
+											: 0,
+									DS:
+										json.response.REFUELS.R[i].DS != undefined
+											? json.response.REFUELS.R[i].DS[0]
+											: 0,
+									EHP:
+										json.response.REFUELS.R[i].EHP != undefined
+											? json.response.REFUELS.R[i].EHP[0]
+											: 0,
+									EHT:
+										json.response.REFUELS.R[i].EHT != undefined
+											? json.response.REFUELS.R[i].EHT[0]
+											: 0,
+									SID:
+										json.response.REFUELS.R[i].SID != undefined
+											? json.response.REFUELS.R[i].SID[0]
+											: 0,
+									CC:
+										json.response.REFUELS.R[i].CC != undefined
+											? json.response.REFUELS.R[i].CC[0]
+											: 0,
+									PN:
+										json.response.REFUELS.R[i].PN != undefined
+											? json.response.REFUELS.R[i].PN[0]
+											: 0,
+									PPM:
+										json.response.REFUELS.R[i].PPM != undefined
+											? json.response.REFUELS.R[i].PPM[0]
+											: 0,
+									SN:
+										json.response.REFUELS.R[i].SN != undefined
+											? json.response.REFUELS.R[i].SN[0]
+											: 0,
+									FTN:
+										json.response.REFUELS.R[i].FTN != undefined
+											? json.response.REFUELS.R[i].FTN[0]
+											: 0
+								}).then(resp => {});
 							}
+							console.log('procesado correctamente ');
 						}
 					});
 			} else {
@@ -77,36 +150,111 @@ function transaction() {
 					.then(res => res.json())
 					.then(json => {
 						if (json) {
-							var obj = JSON.stringify(json);
-							var conv = JSON.parse(obj);
-
-							for (i = 0; i < conv['RefuelRecord'].length; i++) {
+							for (i = 0; i < json.response.REFUELS.R.length; i++) {
 								FuelApi.create({
-									ID: conv['RefuelRecord'][i]['IXID'],
-									CID: conv['RefuelRecord'][i]['CID'],
-									PID: conv['RefuelRecord'][i]['PID'],
-									RT: conv['RefuelRecord'][i]['RT'],
-									DID: conv['RefuelRecord'][i]['DID'],
-									TID: conv['RefuelRecord'][i]['TID'],
-									VID: conv['RefuelRecord'][i]['VID'],
-									NN: conv['RefuelRecord'][i]['NN'],
-									OD: conv['RefuelRecord'][i]['OD'],
-									TC: conv['RefuelRecord'][i]['TC'],
-									EH: conv['RefuelRecord'][i]['EH'],
-									JID: conv['RefuelRecord'][i]['JID'],
-									CS: conv['RefuelRecord'][i]['CS'],
-									CE: conv['RefuelRecord'][i]['CE'],
-									TN: conv['RefuelRecord'][i]['TN'],
-									CT: conv['RefuelRecord'][i]['CT'],
-									DS: conv['RefuelRecord'][i]['DS'],
-									EHP: conv['RefuelRecord'][i]['EHP'],
-									EHT: conv['RefuelRecord'][i]['EHT'],
-									SID: conv['RefuelRecord'][i]['SID'],
-									CC: conv['RefuelRecord'][i]['CC']
-								}).then(resp => {
-									console.log('procesado correctamente ');
-								});
+									ID:
+										json.response.REFUELS.R[i].IXID != undefined
+											? json.response.REFUELS.R[i].IXID[0]
+											: 0,
+									CID:
+										json.response.REFUELS.R[i].CID != undefined
+											? json.response.REFUELS.R[i].CID[0]
+											: 0,
+									PID:
+										json.response.REFUELS.R[i].PID != undefined
+											? json.response.REFUELS.R[i].PID[0]
+											: 0,
+									RT:
+										json.response.REFUELS.R[i].RT != undefined
+											? json.response.REFUELS.R[i].RT[0]
+											: 0,
+									DID:
+										json.response.REFUELS.R[i].DID != undefined
+											? json.response.REFUELS.R[i].DID[0]
+											: 0,
+									TID:
+										json.response.REFUELS.R[i].TID != undefined
+											? json.response.REFUELS.R[i].TID[0]
+											: 0,
+									VID:
+										json.response.REFUELS.R[i].VID != undefined
+											? json.response.REFUELS.R[i].VID[0]
+											: 0,
+									NN:
+										json.response.REFUELS.R[i].NN != undefined
+											? json.response.REFUELS.R[i].NN[0]
+											: 0,
+									OD:
+										json.response.REFUELS.R[i].OD != undefined
+											? json.response.REFUELS.R[i].OD[0]
+											: 0,
+									TC:
+										json.response.REFUELS.R[i].TC != undefined
+											? json.response.REFUELS.R[i].TC[0]
+											: 0,
+									EH:
+										json.response.REFUELS.R[i].EH != undefined
+											? json.response.REFUELS.R[i].EH[0]
+											: 0,
+									JID:
+										json.response.REFUELS.R[i].JID != undefined
+											? json.response.REFUELS.R[i].JID[0]
+											: 0,
+									CS:
+										json.response.REFUELS.R[i].CS != undefined
+											? json.response.REFUELS.R[i].CS[0]
+											: 0,
+									CE:
+										json.response.REFUELS.R[i].CE != undefined
+											? json.response.REFUELS.R[i].CE[0]
+											: 0,
+									TN:
+										json.response.REFUELS.R[i].TN != undefined
+											? json.response.REFUELS.R[i].TN[0]
+											: 0,
+									CT:
+										json.response.REFUELS.R[i].CT != undefined
+											? json.response.REFUELS.R[i].CT[0]
+											: 0,
+									DS:
+										json.response.REFUELS.R[i].DS != undefined
+											? json.response.REFUELS.R[i].DS[0]
+											: 0,
+									EHP:
+										json.response.REFUELS.R[i].EHP != undefined
+											? json.response.REFUELS.R[i].EHP[0]
+											: 0,
+									EHT:
+										json.response.REFUELS.R[i].EHT != undefined
+											? json.response.REFUELS.R[i].EHT[0]
+											: 0,
+									SID:
+										json.response.REFUELS.R[i].SID != undefined
+											? json.response.REFUELS.R[i].SID[0]
+											: 0,
+									CC:
+										json.response.REFUELS.R[i].CC != undefined
+											? json.response.REFUELS.R[i].CC[0]
+											: 0,
+									PN:
+										json.response.REFUELS.R[i].PN != undefined
+											? json.response.REFUELS.R[i].PN[0]
+											: 0,
+									PPM:
+										json.response.REFUELS.R[i].PPM != undefined
+											? json.response.REFUELS.R[i].PPM[0]
+											: 0,
+									SN:
+										json.response.REFUELS.R[i].SN != undefined
+											? json.response.REFUELS.R[i].SN[0]
+											: 0,
+									FTN:
+										json.response.REFUELS.R[i].FTN != undefined
+											? json.response.REFUELS.R[i].FTN[0]
+											: 0
+								}).then(resp => {});
 							}
+							console.log('procesado correctamente ');
 						}
 					});
 			}
