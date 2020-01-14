@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const db = {};
-const sequelize = new Sequelize('dbcombustible', 'cmonte', 'Monte2019', {
+const sequelize = new Sequelize('dbcombustible', 'Cmonte', 'Montelimar2019', {
 	dialect: 'mssql',
 	host: '192.168.200.58',
 	pool: {
