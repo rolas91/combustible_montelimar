@@ -16,7 +16,7 @@ app.use('/', fuelservietransaction);
 
 app.listen(port, () => {
 	cron.schedule(
-		'*/30 * * * *',
+		'*/10 * * * *',
 		function() {
 			console.log('run...');
 			transaction();

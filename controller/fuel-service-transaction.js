@@ -26,6 +26,7 @@ function transaction() {
 				})
 					.then(res => res.json())
 					.then(json => {
+						console.log(json);
 						if (json) {
 							for (i = 1; i < json.response.REFUELS.R.length; i++) {
 								FuelApi.create({
